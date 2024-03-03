@@ -1,4 +1,33 @@
-# Getting Started with Create React App
+# Movie Hong
+
+영화 API를 사용하여 제작한 영화 및 TV 시리즈의 정보를 찾아 볼 수 있는 사이트
+
+<!-- <img src='./public/common/mycocktailer_thumb.jpg' alt='mycocktailer 표지'/> -->
+
+## 배포 주소 
+> [Movie Hong 보러가기]()
+
+## Stack 
+react / javascript / sass / github / visual studio code
+
+## 개발 기간 
+> 2023.9 / 약 3주간
+
+## 사용 API 
+- 영화 OPEN API [보러가기](https://developer.themoviedb.org/docs/getting-started)
+
+## 주요 기능
+- 
+
+## 시작 가이드
+Frontend
+```
+$ cd moviedb
+$ npm install 
+$ npm start
+```
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +96,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->

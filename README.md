@@ -11,7 +11,7 @@
 react / javascript / sass / github / visual studio code
 
 ## 개발 기간 
-> 2023.9 / 약 3주간
+> 2023.9 / 3주간
 
 ## 사용 API 
 - 영화 OPEN API [보러가기](https://developer.themoviedb.org/docs/getting-started)

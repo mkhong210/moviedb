@@ -29,6 +29,7 @@ function Main() {
 
 	const mainShow = async () => {
 		const [mainSrc1, mainSrc2, mainSrc3, mainSrc4] = await Promise.all([
+			// moviedb.get(`/movie/popular/`),
 			moviedb.get(`/movie/popular/`),
 			moviedb.get(`/movie/top_rated/`),
 			moviedb.get(`/tv/popular/`),
@@ -41,7 +42,7 @@ function Main() {
 	}
 
 	useEffect(() => {
-		mainShow(); // 컴포넌트가 마운트될 때 mainShow 호출
+		// mainShow(); // 컴포넌트가 마운트될 때 mainShow 호출
 	}, []);
 
 	return (

@@ -20,11 +20,11 @@ function Detail() {
 				<ul className='genre_list'>
 					<li>
 						{data.id}
-						{
+						{/* {
 							data.genres.map(item => (
 								<p>{item}</p>
 							))
-						}
+						} */}
 					</li>
 				</ul>
 			</section>

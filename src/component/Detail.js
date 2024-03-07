@@ -10,7 +10,7 @@ function Detail() {
 		.then(res => { setData(res.data) })
 	},[])
 	
-	console.log(data.genres)
+	console.log(data, data.genres)
 	
 	return (
 		<>
@@ -19,12 +19,11 @@ function Detail() {
 				<p className='title'>{data.title}{data.name}</p>
 				<ul className='genre_list'>
 					<li>
-						{data.id}
-						{/* {
+						{data.genres &&
 							data.genres.map(item => (
-								<p>{item}</p>
+								<p key={item.id}>{item.name}</p>
 							))
-						} */}
+						}
 					</li>
 				</ul>
 			</section>

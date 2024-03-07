@@ -78,7 +78,7 @@ html, body {
   font-size: 1.2rem;
   color: #fff;
   width: auto;
-  background-color: rgb(87, 70, 240);
+  background-color: #5746f0;
   padding: 10px 20px;
   border-radius: 40px;
   font-weight: bold;
@@ -113,7 +113,7 @@ html, body {
   height: 8px !important;
 }
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  background: blueviolet !important;
+  background: #5746f0 !important;
 }
 
 /* main section list  */
@@ -178,7 +178,29 @@ html, body {
   width: 100%;
 }
 
+
+/* detail  */
 .detail_wrap {
   margin: 100px auto;
   text-align: center;
 }
+
+.detail_wrap .title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.detail_wrap .genre_list p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #fff;
+  background-color: #5746f0;
+  padding: 8px 16px;
+  border-radius: 30px;
+  display: inline-block;
+  margin: 0;
+}
+.detail_wrap .genre_list p:not(:last-child) {
+  margin-right: 18px;
+}
+

@@ -13,26 +13,36 @@ section > h2 {
   display: none;
 }
 
-/* myown_cocktail */
-.myown_cocktail {
-  max-width: 768px;
-  width: 100%;
-  /* background-color: #; */
-  max-height: 2000px;
-  // height: 100%;
-  // border: solid 2px #000;
-  position: relative;
-  main {
-    margin: 60px 0 65px 0;
-    background-color: #32154F;
-    max-height: 1000px;
-    overflow-y: auto;
-    * {
-      color: #fff;
-    } 
-  } 
-}
+// /* myown_cocktail */
+// .myown_cocktail {
+//   max-width: 768px;
+//   width: 100%;
+//   /* background-color: #; */
+//   max-height: 2000px;
+//   // height: 100%;
+//   // border: solid 2px #000;
+//   position: relative;
+//   main {
+//     margin: 60px 0 65px 0;
+//     background-color: #32154F;
+//     max-height: 1000px;
+//     overflow-y: auto;
+//     * {
+//       color: #fff;
+//     } 
+//   } 
+// }
 img {
   width: 200px;
+}
+
+/* detail  */
+.detail_wrap {
+  margin: 100px auto;
+  text-align: center;
+}
+
+.detail_wrap {
+  
 }
 

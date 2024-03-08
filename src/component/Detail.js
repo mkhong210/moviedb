@@ -16,16 +16,18 @@ function Detail() {
 		<>
 			<section className='detail_wrap'>
 				<img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} />
-				<p className='title'>{data.title}{data.name}</p>
-				<ul className='genre_list'>
-					<li>
-						{data.genres &&
-							data.genres.map(item => (
-								<p key={item.id}>{item.name}</p>
-							))
-						}
-					</li>
-				</ul>
+				<div className='desc_wrap'>
+					<p className='title'>{data.title}{data.name}</p>
+					<ul className='genre_list'>
+						<li>
+							{data.genres &&
+								data.genres.map(item => (
+									<p key={item.id}>{item.name}</p>
+								))
+							}
+						</li>
+					</ul>
+				</div>
 			</section>
 		</>
 	)

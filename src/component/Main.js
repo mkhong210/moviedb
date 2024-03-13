@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import '../App.css';
+import '../App.scss';
 
 function Main() {
 	// const { data, fetchFn } = useContext(myContext);

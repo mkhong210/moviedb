@@ -6,9 +6,10 @@
 
 ## 배포 주소 
 > [Movie Hong 보러가기]()
+<!-- > [Movie Hong 보러가기](https://mkhong210.github.io/moviedb/) -->
 
 ## Stack 
-react / javascript / sass / github / visual studio code
+React / javascript / SCSS / github / visual studio code
 
 ## 개발 기간 
 > 2023.9 / 3주간
@@ -17,6 +18,7 @@ react / javascript / sass / github / visual studio code
 - 영화 OPEN API [보러가기](https://developer.themoviedb.org/docs/getting-started)
 
 ## 주요 기능
+- 영화 및 TV 시리즈를 보여주는 리스트, 검색 기능 구현
 - 
 
 ## 시작 가이드

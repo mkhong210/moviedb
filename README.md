@@ -1,11 +1,11 @@
-# Movie Hong
+# Hong Movie
 
 영화 API를 사용하여 제작한 영화 및 TV 시리즈의 정보를 찾아 볼 수 있는 사이트
 
 <!-- <img src='./public/common/mycocktailer_thumb.jpg' alt='mycocktailer 표지'/> -->
 
 ## 배포 주소 
-> [Movie Hong 보러가기]()
+> [Hong Movie 보러가기]()
 <!-- > [Movie Hong 보러가기](https://mkhong210.github.io/moviedb/) -->
 
 ## Stack 

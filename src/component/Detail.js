@@ -10,7 +10,7 @@ function Detail() {
 		.then(res => { setData(res.data) })
 	},[])
 	
-	console.log(data, data.genres)
+	console.log(data, data.overview)
 	
 	return (
 		<>
@@ -27,6 +27,10 @@ function Detail() {
 							}
 						</li>
 					</ul>
+					<div className='desc_overview'>
+						<p className='overview_title'>OVERVIEW</p>
+						<p className='overview_text'>{data.overview}</p>
+					</div>
 				</div>
 			</section>
 		</>

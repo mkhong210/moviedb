@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 import MySlide from './MySlide';
 import { Link } from 'react-router-dom';
@@ -10,12 +10,26 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import '../App.scss';
+import { myContext } from '../Context';
 
 function Main() {
 	// const { data, fetchFn } = useContext(myContext);
 	// const elInput = useRef();
 	// const params = useParams();
 	// console.log(params);
+
+	let { data, fetchFn, setProgram, setCat} = useContext(myContext);
+
+	const reset = () => {
+		setProgram("movie");
+		setCat("popular");
+		fetchFn("get");
+	};
+	// reset();
+	// useEffect로 데이터 리셋 시키고 시작 
+	useEffect(()=>{
+		// reset();
+	},[])
 
 	let moviedb = axios.create({
 		baseURL: 'https://api.themoviedb.org/3',
@@ -39,7 +53,7 @@ function Main() {
 		setSec3(mainSrc3.data.results);
 		setSec4(mainSrc4.data.results);
 	}
-
+	
 	useEffect(() => {
 		console.log(sec1)
 		// mainShow(); // 컴포넌트가 마운트될 때 mainShow 호출
@@ -61,7 +75,8 @@ function Main() {
 						className="mainSwiper"
 					>
 						{
-							sec1.map(item => (
+							data.map(item => (
+							// sec1.map(item => (
 								<SwiperSlide key={item.id}>
 									<Link to={`/movie/${item.id}`}>
 										<div className='main_item'>

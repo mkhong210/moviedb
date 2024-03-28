@@ -21,13 +21,16 @@ function Context({ children }) {
 	// let [page, setPage] = useState();
 	// let [num, setNum] = useState();
 
-
 	let moviedb = axios.create({
 		baseURL: 'https://api.themoviedb.org/3',
 		params: { api_key: 'f89a6c1f22aca3858a4ae7aef10de967' }
 	})
 
-	const fetchFn = async (type='movie', program='movie', cat='popular', page, search) => {
+	const setProgram = (program) => { /* 프로그램을 설정하는 로직 */ };
+  const setCat = (cat) => { /* 카테고리를 설정하는 로직 */ };
+
+	const fetchFn = async (type, program, cat, search) => {
+	// const fetchFn = async (type='movie', program='movie', cat='popular', page, search) => {
 	// const fetchFn = async (type, data) => {
 		let res,viewData;
 
@@ -42,10 +45,10 @@ function Context({ children }) {
 				viewData = res.data.results;
 				break;
 
-			case "more":
-				res = await moviedb.get(`/${program}/${cat}?page=${page}`);
-				viewData = res.data.results;
-				break;
+			// case "more":
+			// 	res = await moviedb.get(`/${program}/${cat}?page=${page}`);
+			// 	viewData = res.data.results;
+			// 	break;
 
 			default:
 				res = await moviedb.get(`/${program}/${cat}`);
@@ -55,11 +58,12 @@ function Context({ children }) {
 	}
 	
 	useEffect(() => {
-		fetchFn();
+		// fetchFn(type, data, program, cat, search);
+		fetchFn("get", "movie", "popular", "");
 	}, []);
 
 	return (
-		<myContext.Provider value={{ data, fetchFn }}>
+		<myContext.Provider value={{ data, fetchFn, setProgram, setCat}}>
 			{children}
 		</myContext.Provider>
 	)

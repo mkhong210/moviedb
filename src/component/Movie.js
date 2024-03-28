@@ -26,7 +26,7 @@ function Movie() {
 	// useEffect로 데이터 리셋 시키고 시작 
 	useEffect(()=>{
 		fetchFn("get", 'movie', 'popular');
-		// reset();
+		reset();
 	},[])
 
 	return (

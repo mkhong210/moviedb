@@ -18,7 +18,7 @@ function Main() {
 	// const params = useParams();
 	// console.log(params);
 
-	let { data, fetchFn, setProgram, setCat} = useContext(myContext);
+	let { fetchFn, setProgram, setCat} = useContext(myContext);
 
 	const reset = () => {
 		setProgram("movie");
@@ -28,7 +28,7 @@ function Main() {
 	// reset();
 	// useEffect로 데이터 리셋 시키고 시작 
 	useEffect(()=>{
-		// reset();
+		reset();
 	},[])
 
 	let moviedb = axios.create({
@@ -75,8 +75,8 @@ function Main() {
 						className="mainSwiper"
 					>
 						{
-							data.map(item => (
-							// sec1.map(item => (
+							// data.map(item => (
+							sec1.map(item => (
 								<SwiperSlide key={item.id}>
 									<Link to={`/movie/${item.id}`}>
 										<div className='main_item'>

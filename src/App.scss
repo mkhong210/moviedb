@@ -161,6 +161,7 @@ section>h2 {
 .main_list {
 	/* display: flex; */
 	/* overflow-y: visible; */
+	padding-bottom: 40px;
 	.inner {
 		/* flex-wrap: nowrap;
 		align-items: flex-start;
@@ -176,6 +177,7 @@ section>h2 {
 		h2 {
 			font-size: 2rem;
 			line-height: 1.2;
+			font-weight: bold;
 		}
 		
 		.moreBtn {

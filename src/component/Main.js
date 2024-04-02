@@ -18,17 +18,17 @@ function Main() {
 	// const params = useParams();
 	// console.log(params);
 
-	let { fetchFn, setProgram, setCat} = useContext(myContext);
+	let { fetchFn} = useContext(myContext);
 
 	const reset = () => {
-		setProgram("movie");
-		setCat("popular");
-		fetchFn("get");
+		// setProgram("movie");
+		// setCat("popular");
+		// fetchFn("get", "movie","popular", "");
 	};
 	// reset();
 	// useEffect로 데이터 리셋 시키고 시작 
 	useEffect(()=>{
-		reset();
+		// reset();
 	},[])
 
 	let moviedb = axios.create({
@@ -41,22 +41,47 @@ function Main() {
 	const [sec3, setSec3] = useState([]);
 	const [sec4, setSec4] = useState([]);
 
-	const mainShow = async () => {
-		const [mainSrc1, mainSrc2, mainSrc3, mainSrc4] = await Promise.all([
-			moviedb.get(`/movie/popular/`),
-			moviedb.get(`/movie/top_rated/`),
-			moviedb.get(`/tv/popular/`),
-			moviedb.get(`/tv/top_rated/`),
-		]);
-		setSec1(mainSrc1.data.results);
-		setSec2(mainSrc2.data.results);
-		setSec3(mainSrc3.data.results);
-		setSec4(mainSrc4.data.results);
-	}
+	// const mainShow = async () => {
+	// 	const [mainSrc1, mainSrc2, mainSrc3, mainSrc4] = await Promise.all([
+	// 		moviedb.get(`/movie/popular/`),
+	// 		moviedb.get(`/movie/top_rated/`),
+	// 		moviedb.get(`/tv/popular/`),
+	// 		moviedb.get(`/tv/top_rated/`),
+	// 	]);
+	// 	setSec1(mainSrc1.data.results);
+	// 	setSec2(mainSrc2.data.results);
+	// 	setSec3(mainSrc3.data.results);
+	// 	setSec4(mainSrc4.data.results);
+	// }
 	
+	// useEffect(() => {
+	// 	console.log(sec1)
+	// 	// mainShow(); // 컴포넌트가 마운트될 때 mainShow 호출
+	// }, []);
+
+	const fetchData = async () => {
+		const [mainSrc1, mainSrc2, mainSrc3, mainSrc4] = await Promise.all([
+				moviedb.get("/movie/popular"),
+				moviedb.get("/movie/top_rated"),
+				moviedb.get("/tv/popular"),
+				moviedb.get("/tv/top_rated"),
+		]);
+		if (mainSrc1 && mainSrc1.data.results) {
+				setSec1(mainSrc1.data.results);
+		}
+		if (mainSrc2 && mainSrc2.data.results) {
+				setSec2(mainSrc2.data.results);
+		}
+		if (mainSrc3 && mainSrc3.data.results) {
+				setSec3(mainSrc3.data.results);
+		}
+		if (mainSrc4 && mainSrc4.data.results) {
+				setSec4(mainSrc4.data.results);
+		}
+	};
 	useEffect(() => {
-		console.log(sec1)
-		// mainShow(); // 컴포넌트가 마운트될 때 mainShow 호출
+		fetchData(); 
+		// console.log(sec1)
 	}, []);
 
 	return (
@@ -74,7 +99,7 @@ function Main() {
 						grabCursor={true}
 						className="mainSwiper"
 					>
-						{
+						{sec1 && sec1.length > 0 && (
 							// data.map(item => (
 							sec1.map(item => (
 								<SwiperSlide key={item.id}>
@@ -86,7 +111,7 @@ function Main() {
 									</Link>
 								</SwiperSlide>
 							))
-						}
+						)}	
 					</Swiper>
 				</div>
 			</section>
@@ -102,7 +127,7 @@ function Main() {
 						grabCursor={true}
 						className="mainSwiper"
 					>
-						{
+						{sec2 && sec2.length > 0 && (
 							sec2.map(item => (
 								<SwiperSlide key={item.id}>
 									<Link to={`/movie/${item.id}`}>
@@ -113,7 +138,7 @@ function Main() {
 									</Link>
 								</SwiperSlide>
 							))
-						}
+						)}
 					</Swiper>
 				</div>
 			</section>
@@ -129,7 +154,7 @@ function Main() {
 						grabCursor={true}
 						className="mainSwiper"
 					>
-						{
+						{sec3 && sec3.length > 0 && (
 							sec3.map(item => (
 								<SwiperSlide key={item.id}>
 									<Link to={`/tv/${item.id}`}>
@@ -140,7 +165,7 @@ function Main() {
 									</Link>
 								</SwiperSlide>
 							))
-						}
+						)}
 					</Swiper>
 				</div>
 			</section>
@@ -156,7 +181,7 @@ function Main() {
 						grabCursor={true}
 						className="mainSwiper"
 					>
-						{
+						{sec4 && sec4.length > 0 && (
 							sec4.map(item => (
 								<SwiperSlide key={item.id}>
 									<Link to={`/tv/${item.id}`}>
@@ -167,7 +192,7 @@ function Main() {
 									</Link>
 								</SwiperSlide>
 							))
-						}
+						)}
 					</Swiper>
 				</div>
 			</section>

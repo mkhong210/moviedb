@@ -15,18 +15,24 @@ import '../App.scss';
 import { Pagination } from 'swiper/modules';
 
 function MySlide() {
-	let { data, fetchFn, setProgram, setCat} = useContext(myContext);
+	let { data, fetchFn } = useContext(myContext);
 
-	const reset = () => {
-		setProgram("movie");
-		setCat("popular");
-		fetchFn("get");
-	};
+	// const reset = () => {
+	// 	// setProgram("movie");
+	// 	// setCat("popular");
+	// 	// fetchFn("get");
+	// 	fetchFn("get", "movie","popular", "");
+	// };
 	// reset();
 	// useEffect로 데이터 리셋 시키고 시작 
 	useEffect(()=>{
+		const reset = async () => {
+			await fetchFn("get", "movie", "popular", "");
+			// console.log(data)
+		};
+		reset();
 		// reset();
-	},[])
+	},[data])
 
 	return (
 		<>

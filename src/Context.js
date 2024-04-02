@@ -26,9 +26,6 @@ function Context({ children }) {
 		params: { api_key: 'f89a6c1f22aca3858a4ae7aef10de967' }
 	})
 
-	const setProgram = (program) => { /* 프로그램을 설정하는 로직 */ };
-  const setCat = (cat) => { /* 카테고리를 설정하는 로직 */ };
-
 	const fetchFn = async (type, program, cat, search) => {
 	// const fetchFn = async (type='movie', program='movie', cat='popular', page, search) => {
 	// const fetchFn = async (type, data) => {
@@ -63,7 +60,8 @@ function Context({ children }) {
 	}, []);
 
 	return (
-		<myContext.Provider value={{ data, fetchFn, setProgram, setCat}}>
+		// <myContext.Provider value={{ data, fetchFn, setProgram, setCat}}>
+		<myContext.Provider value={{ data, fetchFn}}>
 			{children}
 		</myContext.Provider>
 	)

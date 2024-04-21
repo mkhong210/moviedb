@@ -5,8 +5,8 @@
 <!-- <img src='./public/common/mycocktailer_thumb.jpg' alt='mycocktailer 표지'/> -->
 
 ## 배포 주소 
-> [Hong Movie 보러가기]()
-<!-- > [Movie Hong 보러가기](https://mkhong210.github.io/moviedb/) -->
+<!-- > [Hong Movie 보러가기]() -->
+> [Movie Hong 보러가기](https://mkhong210.github.io/moviedb/)
 
 ## Stack 
 React / javascript / SCSS / github / visual studio code
